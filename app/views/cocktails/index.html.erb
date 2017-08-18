@@ -1,9 +1,22 @@
-<h1>Cocktails/Index</h1>
+<div class="container">
+  <div class="row">
+    <h1>Cocktails/Index</h1>
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://fillmurray.com/360/175');">
+        <div class="description">
+          <h2><%= link_to cocktail.name, cocktail_path(cocktail) %><br/></h2>
+        </div>
+      </div>
+    </div>
+    <% end %>
 
-<% @cocktails.each do |cocktail| %>
-  <%= link_to cocktail.name, cocktail_path(cocktail) %><br/>
-<% end %>
+  </div>
+  <div class="row">
+    <h2><%= link_to 'New Cocktail', new_cocktail_path %></h2>
+  </div>
+</div>
 
-<br/>
 
-<%= link_to 'New Cocktail', new_cocktail_path %>
+
+
